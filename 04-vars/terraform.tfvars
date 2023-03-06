@@ -1,1 +1,1 @@
-default = "Hello sample1"
+sample1 = "Hello Sample1"
