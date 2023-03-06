@@ -19,3 +19,7 @@ output "cli"{
 }
 
 variable "input" {}
+
+output "input" {
+  value = "hello from input from var file"
+}
