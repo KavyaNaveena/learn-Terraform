@@ -18,8 +18,11 @@ output "cli"{
   value = var.cli
 }
 
-variable "input" {}
+variable "input" {
+  default = "hello input from var file"
+}
 
 output "input" {
-  value = "hello from input from var file"
+  value = var.input
 }
+
