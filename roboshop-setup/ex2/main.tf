@@ -10,3 +10,11 @@ resource "aws_instance" "frontend" {
   instance_type             =  "t3.micro"
   vpc_security_group_ids    =  ["sg-044088839c84c7c16"]
 }
+
+variable "instances" {
+  default = ["cart","catalogue","user","shipping","payment"]
+}
+
+output "public-ip" {
+  value = aws_instance.frontend.public_ip
+}
