@@ -5,7 +5,7 @@ data "aws_ami" "ami"{
 }
 
 resource "aws_instance" "frontend" {
-  count                     =  5
+  count                     =  length(var.instances)
   ami                       = "ami-0a017d8ceb274537d"
   instance_type             =  "t3.micro"
   vpc_security_group_ids    =  ["sg-044088839c84c7c16"]
@@ -16,6 +16,6 @@ variable "instances" {
 }
 
 output "public-ip" {
-  value = aws_instance.frontend.public_ip
+  value = aws_instance.frontend.*.public_ip
 
 }
