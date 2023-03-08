@@ -28,7 +28,7 @@ variable "instances" {
 }
 
 output "ec2" {
-  value = var.instances["catalogue"].public_ip
+  value = aws_instance.instances["catalogue"].public_ip
 }
 ## immature code
 /*variable "names" {
