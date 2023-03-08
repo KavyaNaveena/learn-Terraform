@@ -30,3 +30,7 @@ variable "d3" {
 resource "null_resource" "d3" {
   for_each = var.d3
 }
+
+output "fruits" {
+  value = [for s in var.d2 : upper[s]]
+}
