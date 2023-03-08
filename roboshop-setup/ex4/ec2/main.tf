@@ -8,6 +8,7 @@ data "aws_ami" "ami" {
 resource "aws_instance" "ec2" {
   ami                    = data.aws_ami.ami.image_id
   instance_type          = var.instance_type
+  security_groups        = [var.security_id]
   tags = {
     Name = var.component
   }
@@ -23,3 +24,4 @@ resource "aws_route53_record" "record" {
 
 variable "component" {}
 variable "instance_type" {}
+variable "security_id" {}
