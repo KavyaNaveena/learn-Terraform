@@ -31,7 +31,7 @@ output "ec2" {
   value = var.instances["catalogue"].public_ip
 }
 ## immature code
-variable "names" {
+/*variable "names" {
   default = ["catalogue","user"]
 }
 
@@ -47,7 +47,7 @@ resource "aws_instance" "instances" {
  tags = {
    Name = var.names[count.index]
  }
-}
+}*/
 
 ##Little mature code
 /*
