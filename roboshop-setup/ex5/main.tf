@@ -9,6 +9,13 @@ module "ec2" {
   security_id = module.sg.sg_id
 }
 
+module "route53"{
+  for_each = var.instances
+  source = "./route53"
+  component = each.value["name"]
+  private_ip =
+}
+
 output "ec2" {
   value = module.ec2
 }
